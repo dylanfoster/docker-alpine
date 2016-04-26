@@ -24,7 +24,7 @@ test:
 	docker run --rm \
 		-v $(CURDIR):/app \
 		-v /var/run/docker.sock:/docker.sock \
-		-e DOCKER_HOST="unix=///docker.sock" \
+		-e DOCKER_HOST="unix:///docker.sock" \
 		-e DOCKER_IMAGE_NAME=$(DOCKER_IMAGE_NAME) \
 		-e BUILD_TAG=$(BUILD_TAG) \
-		dylanfoster/bats
+		dylanfoster/bats /app/tests
