@@ -8,4 +8,5 @@ RUN adduser -D -u ${VADER_UID} ${VADER_USER} \
       && mkdir -p ${DATA_DIR}/secure \
       && chown -R ${VADER_USER} ${DATA_DIR}
 
+RUN apk add --no-cache ca-certificates gnupg
 CMD ["/bin/sh"]
